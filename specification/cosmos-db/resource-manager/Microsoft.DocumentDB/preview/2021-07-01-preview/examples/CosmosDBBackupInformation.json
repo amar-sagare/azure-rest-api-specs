@@ -6,31 +6,16 @@
     "accountName": "ddb1",
     "databaseName": "databaseName",
     "containerName": "containerName",
-    "mergeParameters": {
-      "isDryRun": false,
-      "maxTargetPartitionSizeInGB": 30
+    "location": {
+      "location": "North Europe"
     }
   },
   "responses": {
     "200": {
       "body": {
-        "partitionInfo": [
-          {
-          "id": "0",
-          "throughput": 5000,
-          "storageInKB": 5000
-          },
-          {
-          "id": "0",
-          "throughput": 5000,
-          "storageInKB": 5000
-          },
-          {
-          "id": "0",
-          "throughput": 5000,
-          "storageInKB": 5000
-          }
-        ]
+        "continuousBackupInformation": {
+          "latestRestorableTimestamp": "2021-02-05T02:40:50Z"
+        }
       }
     },
     "202": {}

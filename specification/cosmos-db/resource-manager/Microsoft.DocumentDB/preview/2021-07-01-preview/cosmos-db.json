@@ -2236,6 +2236,68 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/throughputSettings/default/Merge": {
+      "post": {
+        "operationId": "SqlResources_Merge",
+        "x-ms-examples": {
+          "CosmosDBSqlContainerMerge": {
+            "$ref": "./examples/CosmosDBSqlContainerMerge.json"
+          }
+        },
+        "description": "Merge the partitions of an Azure Cosmos DB SQL container",
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/accountNameParameter"
+          },
+          {
+            "$ref": "#/parameters/databaseNameParameter"
+          },
+          {
+            "$ref": "#/parameters/containerNameParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "in": "body",
+            "name": "mergeParameters",
+            "required": true,
+            "description": "The parameters for the merge operation.",
+            "schema": {
+              "$ref": "#/definitions/MergeParameters"
+            }
+          }
+
+        ],
+        "responses": {
+          "202": {
+            "description": "The SQL container merge operation will complete asynchronously."
+          },
+          "200": {
+            "description": "The SQL container merge operation was completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/PartitionInfoResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/throughputSettings/default/migrateToManualThroughput": {
       "post": {
         "operationId": "SqlResources_MigrateSqlContainerToManualThroughput",
@@ -6077,6 +6139,55 @@
               "$ref": "#/definitions/ExtendedResourceProperties"
             }
           ]
+        }
+      }
+    },
+    "MergeParameters": {
+      "description": "The properties of an Azure Cosmos DB merge operations",
+      "type": "object",
+      "properties": {
+        "isDryRun": {
+          "type": "boolean",          
+          "description": "Specifies whether the operation is an actual dry run."
+        },
+        "maxTargetPartitionSizeInGB": {
+          "type": "integer",
+          "description": "Specifies the maximum size of the merged partition."
+        }
+      }
+    },
+    "PartitionInfoResult": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PartitionInfo"
+          },
+          "description": "List of physical partitions and their properties."
+        }
+      },
+      "description": "The Merge operation response, that contains the physical partition and their properties."
+    },
+    "PartitionInfo": {
+      "description": "The storage and throughput of a physical partition",
+      "type": "object",
+      "properties": {
+        "id": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The unique identifier of the partition."
+        },
+        "throughput": {
+          "readOnly": true,
+          "type": "integer",
+          "description": "The throughput of the physical partition."
+        },
+        "storageInKB": {
+          "readOnly": true,
+          "type": "integer",
+          "description": "The storage in KB for the physical partition."
         }
       }
     },

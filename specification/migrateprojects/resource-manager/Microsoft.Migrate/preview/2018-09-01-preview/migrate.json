@@ -1160,10 +1160,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DatabaseInstanceDiscoveryDetails"
-          },
-          "x-ms-identifiers": [
-            "instanceId"
-          ]
+          }
         },
         "summary": {
           "description": "Gets or sets the database instances summary per solution. The key of dictionary is the solution name and value is the corresponding database instance summary object.",
@@ -1299,10 +1296,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DatabaseAssessmentDetails"
-          },
-          "x-ms-identifiers": [
-            "assessmentId"
-          ]
+          }
         },
         "lastUpdatedTime": {
           "format": "date-time",
@@ -1563,9 +1557,6 @@
           "items": {
             "$ref": "#/definitions/IEdmSchemaElement"
           },
-          "x-ms-identifiers": [
-            "name"
-          ],
           "readOnly": true
         },
         "vocabularyAnnotations": {
@@ -1573,7 +1564,6 @@
           "items": {
             "$ref": "#/definitions/IEdmVocabularyAnnotation"
           },
-          "x-ms-identifiers": [],
           "readOnly": true
         },
         "referencedModels": {
@@ -1581,7 +1571,6 @@
           "items": {
             "$ref": "#/definitions/IEdmModel"
           },
-          "x-ms-identifiers": [],
           "readOnly": true
         },
         "declaredNamespaces": {
@@ -1630,9 +1619,6 @@
           "items": {
             "$ref": "#/definitions/IEdmNavigationPropertyBinding"
           },
-          "x-ms-identifiers": [
-            "/navigationProperty/name"
-          ],
           "readOnly": true
         },
         "path": {
@@ -1665,9 +1651,6 @@
           "items": {
             "$ref": "#/definitions/ODataPathSegment"
           },
-          "x-ms-identifiers": [
-            "identifier"
-          ],
           "readOnly": true
         },
         "pathTemplate": {
@@ -1679,9 +1662,6 @@
           "items": {
             "$ref": "#/definitions/ODataPathSegment"
           },
-          "x-ms-identifiers": [
-            "identifier"
-          ],
           "readOnly": true
         }
       }
@@ -1702,7 +1682,6 @@
           "items": {
             "$ref": "#/definitions/SelectItem"
           },
-          "x-ms-identifiers": [],
           "readOnly": true
         },
         "allSelected": {
@@ -1719,7 +1698,6 @@
           "items": {
             "$ref": "#/definitions/TransformationNode"
           },
-          "x-ms-identifiers": [],
           "readOnly": true
         }
       }
@@ -1803,9 +1781,6 @@
           "items": {
             "$ref": "#/definitions/IEdmEntityContainerElement"
           },
-          "x-ms-identifiers": [
-            "name"
-          ],
           "readOnly": true
         },
         "schemaElementKind": {
@@ -2162,10 +2137,6 @@
           "items": {
             "$ref": "#/definitions/EdmReferentialConstraintPropertyPair"
           },
-          "x-ms-identifiers": [
-            "/dependentProperty/name",
-            "/principalProperty/name"
-          ],
           "readOnly": true
         }
       }
@@ -2190,9 +2161,6 @@
           "items": {
             "$ref": "#/definitions/IEdmProperty"
           },
-          "x-ms-identifiers": [
-            "name"
-          ],
           "readOnly": true
         },
         "typeKind": {
@@ -2331,28 +2299,21 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DiscoveryDetails"
-          },
-          "x-ms-identifiers": [
-            "machineId"
-          ]
+          }
         },
         "assessmentData": {
           "description": "Gets or sets the assessment details of the machine published by various sources.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/AssessmentDetails"
-          },
-          "x-ms-identifiers": [
-            "assessmentId"
-          ]
+          }
         },
         "migrationData": {
           "description": "Gets or sets the migration details of the machine published by various sources.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/MigrationDetails"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "lastUpdatedTime": {
           "format": "date-time",
@@ -3121,10 +3082,7 @@
           "description": "List of operations.",
           "items": {
             "$ref": "#/definitions/Operation"
-          },
-          "x-ms-identifiers": [
-            "name"
-          ]
+          }
         }
       }
     },

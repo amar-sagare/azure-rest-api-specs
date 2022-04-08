@@ -1036,7 +1036,6 @@ keyname
 Keyschannel
 keyspace
 keyspaces
-keytab
 Keyvault
 keyvaultproperties
 keyvaulturi
@@ -1311,7 +1310,6 @@ mystore
 myvolume
 myworkbooks
 nagios
-nameserver
 namespace's
 nanoserver
 Napoli
@@ -1326,7 +1324,6 @@ ndwi
 NDWI
 Neighbourhood
 netapp
-netbios
 netbsd
 netdev
 Netdev
